@@ -43,21 +43,12 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = default
-[diff "rspec"]
-  xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
 [user]
   email = kaelonswanton@gmail.com
   name = Kaelon Swanton
 [credential "https://github.com"]
-  helper = !/usr/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-  helper = !/usr/bin/gh auth git-credential
-[diff "rspec"]
-  xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
-[user]
-  email = kaelonswanton@gmail.com
-  name = Kaelon Swanton
-[credential "https://github.com"]
-  helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-  helper = !/usr/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
+[http]
+  postBuffer = 524288000
