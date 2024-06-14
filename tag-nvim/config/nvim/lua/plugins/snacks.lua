@@ -80,12 +80,12 @@ return {
       explorer = { enabled = false },
       indent = {
         indent = {
-          enabled = true,
+          enabled = false,
           char = "╎",
           hl = "SnacksIndent",
         },
         scope = {
-          enabled = true,
+          enabled = false,
           char = "╎",
           priority = 200,
           hl = "SnacksIndentScope",

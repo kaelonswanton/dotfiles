@@ -72,7 +72,7 @@ text = "0xc8ccd4"
 cursor = "0x61afef"
 
 [colors.primary]
-background = "0x282c34"
+background = "0x1e222a"
 foreground = "0xabb2bf"
 # End flavours
 
@@ -83,7 +83,7 @@ draw_bold_text_with_bright_colors = false
 blink_interval = 550
 vi_mode_style = { blinking = "On" }
 unfocused_hollow = true
-thickness = 1
+thickness = 0
 
 [cursor.style]
 blinking = "Never"
@@ -111,8 +111,8 @@ save_to_clipboard = true
 
 [window]
 dynamic_title = true
-opacity = 1.0
-title = "Alacritty"
+opacity = 0.9
+title = "Vim"
 
 [window.padding]
 x = 0

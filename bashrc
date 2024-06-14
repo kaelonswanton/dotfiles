@@ -17,3 +17,4 @@ bind Space:magic-space
 
 # Load our profile for any shared configs between bash and zsh
 [[ -r "$HOME/.profile" ]] && . "$HOME/.profile"
+. "$HOME/.cargo/env"
