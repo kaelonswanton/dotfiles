@@ -5,6 +5,7 @@ local colors = require("globals.colors")
 return {
   {
     "sphamba/smear-cursor.nvim",
+    enabled = false,
     event = "CursorMoved",
     opts = {
       -- Smear cursor when switching buffers or windows.
