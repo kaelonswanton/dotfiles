@@ -5,6 +5,7 @@ local colors = require("globals.colors")
 return {
   {
     "sphamba/smear-cursor.nvim",
+    enabled = false,
     event = "CursorMoved",
     opts = {
       cursor_color = "none",

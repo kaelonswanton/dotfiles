@@ -22,3 +22,4 @@
 #
 # Anyways, in those cases we want to source our original bashrc file
 [[ -r ~/.bashrc ]] && . ~/.bashrc
+. "$HOME/.cargo/env"
