@@ -20,10 +20,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 4
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "nolan-mac-m3"
-sudo scutil --set HostName "nolan-mac-m3"
-sudo scutil --set LocalHostName "nolan-mac-m3"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "nolan-mac-m3"
+sudo scutil --set ComputerName "kaelon-mac-m2"
+sudo scutil --set HostName "kaelon-mac-m2"
+sudo scutil --set LocalHostName "kaelon-mac-m2"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "kaelon-mac-m2"
 
 # Disable the sound effects on boot
 # sudo nvram SystemAudioVolume=" "
