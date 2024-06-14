@@ -16,3 +16,4 @@ export TIMEFMT="%U user %S system %P cpu %*E total, running %J"
 # Local config
 [[ -f "$HOME/.zshenv.host" ]] && source "$HOME/.zshenv.host"
 [[ -f "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"
+. "$HOME/.cargo/env"
