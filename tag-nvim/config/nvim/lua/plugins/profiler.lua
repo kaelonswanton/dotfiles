@@ -22,7 +22,7 @@ local config = function()
       vim.ui.input({
         prompt = "Save profile to:",
         completion = "file",
-        default = "/home/nolan/nvim-profile.json",
+        default = "/home/kaelon/nvim-profile.json",
       }, function(filename)
         if filename then
           profile.export(filename)
