@@ -10,4 +10,4 @@ export COLORTERM=truecolor
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Activate dircolors
-[[ -f ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)"
+# [[ -f ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)"

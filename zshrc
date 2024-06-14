@@ -66,3 +66,5 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+export PATH="/opt/homebrew/opt/libiconv/bin:$PATH"
+export BROWSER="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
