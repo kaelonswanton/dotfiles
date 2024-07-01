@@ -9,5 +9,3 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
-export PATH="/opt/homebrew/opt/m4/bin:$PATH"
-export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
