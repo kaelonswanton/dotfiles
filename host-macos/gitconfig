@@ -44,8 +44,8 @@
 [diff]
   colorMoved = default
 [user]
-  email = nolanjtait@gmail.com
-  name = Nolan J Tait
+  email = kaelonswanton@gmail.com
+  name = Kaelon Swanton
 [credential "https://github.com"]
   helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
