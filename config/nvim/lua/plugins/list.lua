@@ -162,6 +162,7 @@ local events = {
     -- Indentations on left side of lines
     "lukas-reineke/indent-blankline.nvim",
     config = require("plugins.configs.indent-blankline"),
+    enabled = false,
     event = "LazyFile",
     main = "ibl",
   },
@@ -213,12 +214,14 @@ local events = {
   {
     "echasnovski/mini.indentscope",
     config = require("plugins.configs.mini-indentscope"),
+    enabled = false,
     event = "LazyFile"
   },
   {
     -- Highlighting of the word under the cursor
     "RRethy/vim-illuminate",
     config = require("plugins.configs.illuminate"),
+    enabled = false,
     dependencies = {
       "nvim-treesitter/nvim-treesitter"
     },
@@ -289,6 +292,7 @@ local events = {
   {
     "andymass/vim-matchup",
     config = require("plugins.configs.matchup"),
+    enabled = false,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     }
