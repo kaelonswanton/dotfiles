@@ -66,3 +66,4 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+export PATH="/opt/homebrew/opt/libiconv/bin:$PATH"
