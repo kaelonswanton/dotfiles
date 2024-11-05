@@ -25,4 +25,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-source /Users/nolan/.config/broot/launcher/bash/br
+source /opt/homebrew/Cellar/broot/1.44.2
