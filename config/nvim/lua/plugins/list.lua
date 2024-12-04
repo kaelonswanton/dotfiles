@@ -173,7 +173,6 @@ local events = {
   {
     -- Indentations on left side of lines
     "lukas-reineke/indent-blankline.nvim",
-    enabled = true,
     config = require("plugins.configs.indent-blankline"),
     enabled = false,
     event = "LazyFile",
