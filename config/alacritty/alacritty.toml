@@ -56,7 +56,7 @@ cyan    = "0x56b6c2"
 white   = "0xabb2bf"
 
 [colors.primary]
-background = "0x282c34"
+background = "0x1e222a"
 foreground = "0xabb2bf"
 # End flavours
 

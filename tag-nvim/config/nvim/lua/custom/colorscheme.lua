@@ -162,6 +162,7 @@ function M.setup()
       DevIconGz({ fg = colors.orange }),
       DevIconBin({ fg = colors.blue }),
       DevIconWaveformAudioFile = { fg = colors.yellow },
+<<<<<<< HEAD
       DevIconMPEGAudioLayerIII({ fg = colors.yellow }),
       DevIconCss({ fg = colors.blue }),
       DevIconScss({ fg = colors.blue }),
@@ -425,7 +426,6 @@ function M.setup()
       MasonMutedBlock({ fg = colors.black, bg = colors.gray }),
       MasonMutedBlockBold({ MasonMutedBlock, gui = "bold" }),
     }
-  end)
 
   -- Return our parsed theme for extension or use elsewhere.
   M.theme = theme
