@@ -2,7 +2,7 @@
 ruby = "3.4.1"
 lua = "5.4.7"
 node = "23.5.0"
-python = "3.12"
+python = "3.13"
 
 [hooks]
 # Enabling corepack will install the `pnpm` package manager specified in your
