@@ -12,3 +12,4 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Activate dircolors
 if [ -x "$(command -v dircolors)" ]; then
   [[ -f ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)"
+fi
