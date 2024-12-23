@@ -43,6 +43,22 @@ local high_priority = {
 
 local custom = {
   {
+    "andweeb/presence.nvim",
+    config = function()
+      require("presence").setup({
+        auto_update = true,
+        neovim_image_text   = "You use VSCode, I use Vim. We are not the same.", -- Text displayed when hovered over the Neovim image
+        editing_text        = "Editing files",
+        file_explorer_text  = "Browsing files",
+        git_commit_text     = "Committing changes",
+        plugin_manager_text = "Managing plugins",
+        reading_text        = "Reading files",
+        workspace_text      = "Working on files",
+      })
+    end,
+    event = "VeryLazy", -- Launch after everything else
+  },
+  {
     "stevearc/profile.nvim",
     enabled = false,
     lazy = false,
