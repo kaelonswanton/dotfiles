@@ -66,7 +66,6 @@ M.setup = function()
         return default_diagnostic_handler(err, result, context, config)
     end
   end
->>>>>>> 974c127 (Fixes rust issues)
 end
 
 -- Provides navigation for LSP symbols for barbecue.nvim
