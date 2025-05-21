@@ -39,11 +39,22 @@ local high_priority = {
     config = require("plugins.configs.bigfile"),
     lazy = false,
   },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   config = require("plugins.configs.hardtime"),
+  --   lazy = false,
+  --   dependencies = { "MunifTanjim/nui.nvim" },
+  -- },
   {
-    "m4xshen/hardtime.nvim",
-    config = require("plugins.configs.hardtime"),
+    "ggandor/leap.nvim",
     lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim" },
+    config = function()
+      local leap = require("leap")
+      -- Change leap binding from s to S
+      vim.keymap.set({ "n", "x" }, "S", function()
+        leap.leap({ target_windows = { vim.fn.win_getid() } })
+      end, { desc = "Leap forward" })
+    end
   },
   {
     "folke/snacks.nvim",
