@@ -3,6 +3,7 @@
 return {
   {
     "andweeb/presence.nvim",
+    enabled = false,
     lazy = false,
     opts = {
       -- General options
