@@ -2,49 +2,59 @@ return {
   {
     "vim-test/vim-test",
     init = function()
+      local function shell(cmd)
+        local h = io.popen(cmd)
+        local out = h:read("*a")
+        h:close()
+        return out:gsub("%s+$", "")
+      end
+
+      local function sh_quote(s)
+        return "'" .. tostring(s):gsub("'", "'\\''") .. "'"
+      end
+
+      -- Pick tmux or tmate depending on context
+      local TMUX_BIN = os.getenv("TMATE") and "tmate" or "tmux"
+
+      vim.g["test#tmux_preserve_scroll"] = true
+
       vim.g["test#custom_strategies"] = {
         tmux = function(cmd)
           local pane_var = "vim_test_pane"
           local pane_id = vim.g[pane_var]
 
-          local function shell(cmd_str)
-            local handle = io.popen(cmd_str)
-            local result = handle:read("*a")
-            handle:close()
-            return result:gsub("%s+$", "")
-          end
-
-          -- Spawn the pane at fixed height if it doesn't exist
+          -- Create the pane if missing
           if not pane_id or pane_id == "" then
-            pane_id = shell("tmux split-window -P -F '#{pane_id}' -v -l 12")
+            pane_id = shell(TMUX_BIN .. " split-window -P -F '#{pane_id}' -v -l 12")
             vim.g[pane_var] = pane_id
           else
-            local exists = os.execute(
-              "tmux list-panes -F '#{pane_id}' | grep -q " .. pane_id
-            )
+            local exists = os.execute(TMUX_BIN .. " list-panes -F '#{pane_id}' | grep -q " .. pane_id)
             if exists ~= 0 then
               vim.g[pane_var] = nil
               return vim.g["test#custom_strategies"].tmux(cmd)
             end
           end
 
-          -- Escape double quotes in the command
-          local escaped_cmd = cmd:gsub('"', '\\"')
+          -- Check copy-mode (older tmate might not have #{pane_in_mode})
+          local in_mode = shell(TMUX_BIN .. " display-message -p -t " .. pane_id .. " '#{pane_in_mode}' 2>/dev/null")
 
-          -- Non-blocking jobstart so Neovim does not redraw or enter prompt state
-          vim.fn.jobstart({ "tmux", "send-keys", "-t", pane_id, "C-l" })
-          vim.fn.jobstart({
-            "tmux",
-            "send-keys",
-            "-t",
-            pane_id,
-            escaped_cmd,
-            "C-m",
-          })
+          if in_mode == "1" and vim.g["test#tmux_preserve_scroll"] then
+            local tmp_pane = shell(TMUX_BIN .. " split-window -P -F '#{pane_id}' -v -l 12")
+            local cmd_chain = string.format(
+              "%s send-keys -t %s C-l \\; %s send-keys -t %s -l %s C-m",
+              TMUX_BIN, tmp_pane, TMUX_BIN, tmp_pane, sh_quote(cmd)
+            )
+            vim.fn.jobstart({ "sh", "-c", cmd_chain })
+            return
+          end
+
+          local tmux_chain = string.format(
+            "%s send-keys -t %s -X cancel \\; %s send-keys -t %s C-l \\; %s send-keys -t %s -l %s C-m",
+            TMUX_BIN, pane_id, TMUX_BIN, pane_id, TMUX_BIN, pane_id, sh_quote(cmd)
+          )
+          vim.fn.jobstart({ "sh", "-c", tmux_chain })
         end,
       }
-
-      vim.g["test#strategy"] = "tmux"
     end,
     keys = {
       {
