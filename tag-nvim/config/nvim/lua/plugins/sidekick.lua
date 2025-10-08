@@ -3,6 +3,7 @@ return {
     "folke/sidekick.nvim",
     disable = true,
     opts = {
+      nes = { enabled = false },
       -- add any options here
       cli = {
         mux = {
