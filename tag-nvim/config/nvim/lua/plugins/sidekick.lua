@@ -4,12 +4,14 @@ return {
   {
     "nolantait/sidekick.nvim",
     branch = "tmux-binary-nt",
-    disabled = true,
     config = function()
       local sidekick = require("sidekick")
 
       sidekick.setup({
         -- add any options here
+        nes = {
+          enabled = false
+        },
         cli = {
           mux = {
             binary = vim.env.TMATE_SESSION and "tmate" or "tmux",
