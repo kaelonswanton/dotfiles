@@ -4,6 +4,7 @@ return {
   {
     "nolantait/sidekick.nvim",
     branch = "tmux-binary-nt",
+    disabled = true,
     config = function()
       local sidekick = require("sidekick")
 
