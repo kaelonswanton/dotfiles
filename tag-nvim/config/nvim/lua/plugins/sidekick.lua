@@ -2,8 +2,9 @@ local tmux = require("utils.sidekick.tmux")
 
 return {
   {
-    "folke/sidekick.nvim",
-    branch = "main",
+    "nolantait/sidekick.nvim",
+    branch = "tmux-binary-nt",
+    disabled = true,
     config = function()
       local sidekick = require("sidekick")
       local utils = require("sidekick.util")
