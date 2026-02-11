@@ -20,9 +20,9 @@ code-theme: one-dark
 show-diffs: true
 
 ## LLM
-model: deepseek/deepseek-chat
-editor-model: deepseek/deepseek-chat
-weak-model: deepseek/deepseek-chat
+# model: deepseek/deepseek-chat
+# editor-model: deepseek/deepseek-chat
+# weak-model: deepseek/deepseek-chat
 cache-prompts: true
 cache-keepalive-pings: 12
 suggest-shell-commands: true
