@@ -9,6 +9,13 @@ local config = function()
     pattern = "ruby",
     callback = function()
       vim.treesitter.start()
+
+      -- Fixes indent lines
+      vim.bo.syntax = "ruby"
+      vim.cmd("runtime! indent/ruby.vim")
+      vim.bo.expandtab = true
+      vim.bo.shiftwidth = 2
+      vim.bo.softtabstop = 2
     end,
   })
 
