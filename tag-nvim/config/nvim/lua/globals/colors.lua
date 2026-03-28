@@ -24,7 +24,7 @@ local colors = {
   purple = "#c678dd", -- base0E
   magenta = "#be5046", -- base0F
   -- End flavours
-  background = "#1F2228",
+  -- background = "#1F2228",
 }
 
 return colors
