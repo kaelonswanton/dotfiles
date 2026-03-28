@@ -4,6 +4,14 @@
 local config = function()
   local treesitter = require("nvim-treesitter.config")
 
+  -- Fixes Ruby syntax colours
+  vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = "ruby",
+    callback = function()
+      vim.treesitter.start()
+    end,
+  })
+
   treesitter.setup({
     auto_install = true,
     ignore_install = {
@@ -76,13 +84,13 @@ return {
     event = "LazyFile",
     opts = {
       enable = true,
-      max_lines = 3, -- How many lines the window should span. Values <= 0 mean no limit.
-      min_window_height = 20, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+      max_lines = 3,           -- How many lines the window should span. Values <= 0 mean no limit.
+      min_window_height = 20,  -- Minimum editor window height to enable context. Values <= 0 mean no limit.
       line_numbers = true,
       multiline_threshold = 1, -- Maximum number of lines to collapse for a single context line
-      trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-      mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
-      zindex = 11, -- Needs to be lower than mini.map
+      trim_scope = "outer",    -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+      mode = "cursor",         -- Line used to calculate context. Choices: 'cursor', 'topline'
+      zindex = 11,             -- Needs to be lower than mini.map
     },
   },
 }
