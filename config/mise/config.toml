@@ -4,7 +4,6 @@ lua = "5.1"
 node = "latest"
 python = "3.13"
 uv = "latest"
-pnpm = "10.32.1"
 
 [hooks]
 # Enabling corepack will install the `pnpm` package manager specified in your
