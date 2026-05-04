@@ -27,7 +27,7 @@ alias pacmirrors="sudo reflector --country Canada,US --latest 200 --protocol htt
 # Shows system journal logs with priority levels 0 (emerg) to 3 (err)
 alias journalctl-error='sudo journalctl -b --priority 0..3'
 
-alias firefox="firefox-developer-edition"
+# alias firefox="firefox-developer-edition"
 
 alias services="systemctl list-units --type=service --all --no-legend | awk '{print $1}' | sed 's/\.service//' | more"
 alias enabled_services="systemctl list-unit-files --type=service --state=enabled --no-legend | awk '{print $1}' | sed 's/\.service//' | more"
