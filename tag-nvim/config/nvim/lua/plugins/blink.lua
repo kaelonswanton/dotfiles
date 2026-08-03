@@ -1,16 +1,12 @@
 return {
   {
     "saghen/blink.cmp",
+    version = "*",
     event = "LazyFile",
     dependencies = {
       "fang2hou/blink-copilot",
       "saghen/blink.lib",
     },
-    build = function()
-      -- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
-      -- you can use `gb` in `:Lazy` to rebuild the plugin as needed
-      require("blink.cmp").build():pwait()
-    end,
     init = function()
       vim.api.nvim_create_autocmd("User", {
         pattern = "BlinkCmpMenuOpen",
